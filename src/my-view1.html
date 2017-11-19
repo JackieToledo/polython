@@ -19,7 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 
 
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     messagingSenderId: "1082287051709"
   };
   firebase.initializeApp(config);
-</script>
+</script>-->
 
 <dom-module id="my-view1">
   <template>
@@ -143,7 +143,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       };
 
-      enviar() {
+      enviar() { /*
+        var persona: {
+            nombre = this.Nombre,
+            sexo = this.Sexo,
+            edad = this.Edad,
+            senias = this.Senias,
+            telefono = this.Telefono,
+            email = this.Email,
+            foto = this.Foto
+        };
+
+        var databaseService = firebase.database();
+        var referencia = databaseServiceq.ref('fotos');
+
+        referencia.update(persona)*/
       }
     }
 

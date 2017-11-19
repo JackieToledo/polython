@@ -23,7 +23,8 @@
     "paper-elements": "^1.0.7",
     "iron-elements": "^1.0.10",
     "paper-input": "^2.0.3",
-    "firebase": "^4.6.1"
+    "firebase": "^4.6.1",
+    "paper-progress": "^2.0.1"
   },
   "resolutions": {
     "polymer": "^2.0.0"
