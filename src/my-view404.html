@@ -1,0 +1,49 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="my-view404">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+        padding: 10px 20px;
+      }
+    </style>
+
+    <p><b> ¿Cómo funciona esta plataforma?</b></p>
+    En el menú se presentan dos opciones: Busco a una persona y encontré a una persona.
+    En ambos casos se piden datos para poder identificar a la persona.
+    <p></p>
+    1.- "Busco un persona": En este opcion podrás subir información que será <b>privada</b> para los demás usuarios acerca de la persona que desea encontrar.
+    <p></p>
+    2.-"Encontré a una persona": En caso de tener información o conocer el paradero de una persona que cree pueda estar desaparecida o necesite ser encontrada, mediante datos y/o una foto puede contactar alguien que esté buscando a la persona ha localizado.
+  <p></p>
+    Cabe mencionar que el hecho de buscar a una persona en ésta plataforma no asegura que la persona sea encontrada.
+     <!--<a href="[[rootPath]]">Hipervínculo.</a>-->
+  </template>
+
+  <script>
+    class MyView404 extends Polymer.Element {
+      static get is() { return 'my-view404'; }
+      static get properties() {
+        return {
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String,
+        };
+      }
+    }
+
+    window.customElements.define(MyView404.is, MyView404);
+  </script>
+</dom-module>

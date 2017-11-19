@@ -1,0 +1,152 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-elements/paper-elements.html">
+<link rel="import" href="../bower_components/iron-elements/iron-elements.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDspYbDuaR5O3PGpRJvbMcpWnHWPBgkEhg",
+    authDomain: "trouver-7e532.firebaseapp.com",
+    databaseURL: "https://trouver-7e532.firebaseio.com",
+    projectId: "trouver-7e532",
+    storageBucket: "",
+    messagingSenderId: "1082287051709"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<dom-module id="my-view1">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+
+      paper-button.enviar {
+        background: var(--paper-blue-500);
+        color:black;
+      }
+
+      paper-button.enviar:hover {
+        background: var(--paper-light-blue-500);
+      }
+    </style>
+
+    <div class="card">
+      <h1>Busco a una persona</h1>
+
+
+      <div class="circle">1</div>
+      <h1>Datos de la persona:</h1>
+      <h4>Es necesario llenar los campos para poder obtener los mejores resultados posibles.</h4>
+      <p>Nombre: </p>
+      <paper-input id = "Nombre" value = "{{Nombre}}" >
+        <input>
+      </paper-input>
+      <p>A: [[Nombre]]</p>
+      <p>Sexo: </p>
+      <paper-input id = "Sexo" value = "{{Sexo}}" >
+        <input>
+      </paper-input>
+      <p>B: [[Sexo]]</p>
+      <p>Edad: </p>
+      <paper-input id = "Edad" value = "{{Edad}}" >
+        <input>
+      </paper-input>
+      <p>C: [[Edad]]</p>
+      <p>Señas particulares: </p>
+      <paper-input id = "Senias" value = "{{Senias}}" >
+        <input>
+      </paper-input>
+      <p>C: [[Nombre.bind-value]]</p>
+
+
+      <div class="circle">2</div>
+      <h1>Datos de contacto:</h1>
+      <h4>Necesitamos tus datos para poderte contactar si encontramos alguna coincidencia.</h4>
+      <p>Teléfono:</p>
+      <paper-input id = "Telefono" value = "{{Telefono}}" >
+        <input>
+      </paper-input>
+      <p>Correo electrónico:</p>
+      <paper-input id = "Email" value= "{{Email}}" >
+        <input>
+      </paper-input>
+      <p/>
+
+
+      <div class="circle">3</div>
+      <h1>Link de la foto</h1>
+      <p>URL:
+      <paper-input id = "Foto" value= "{{Foto}}" >
+        <input>
+      </paper-input></p>
+
+
+      <paper-button raised class="enviar" on-click="enviar">Enviar datos</paper-button>
+    </div>
+  </template>
+
+  <script>
+    class MyView1 extends Polymer.Element {
+      static get is() { return 'my-view1'; }
+      static get properties() 
+      {
+        return {
+          Nombre: {
+            type: String,
+            value: ""
+          },
+          Sexo: {
+            type: String,
+            value: ""
+          },
+          Edad: {
+            type: String,
+            value: ""
+          },
+          Senias: {
+            type: String,
+            value: ""
+          },
+          Telefono: {
+            type: String,
+            value: ""            
+          },
+          Email: {
+            type: String,
+            value: ""
+          },
+          Foto: {
+            type: String,
+            value: ""
+          },
+        }
+      };
+
+      enviar() {
+      }
+    }
+
+    window.customElements.define(MyView1.is, MyView1);
+  </script>
+</dom-module>
